@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { secondaryValues } from "@/lib/content";
 import { Reveal } from "./Reveal";
+import { SecondaryValues } from "./SecondaryValues";
 
 export function AboutBlock() {
   return (
@@ -59,28 +59,8 @@ export function AboutBlock() {
             </p>
           </div>
 
-          {/* Three secondary values as small cards */}
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {secondaryValues.map((s) => {
-              const Icon = s.icon;
-              return (
-                <div
-                  key={s.title}
-                  className="rounded-2xl bg-cream-100 ring-1 ring-ink-100 p-5"
-                >
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-500 text-white shadow-soft">
-                    <Icon className="h-4.5 w-4.5" strokeWidth={2} />
-                  </span>
-                  <p className="mt-4 font-display font-bold text-[15px] text-ink-900 leading-snug">
-                    {s.title}
-                  </p>
-                  <p className="mt-1.5 text-xs text-ink-600 leading-relaxed">
-                    {s.body}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+          {/* Three secondary values — auto-sliding carousel on mobile, 3-up grid on sm+ */}
+          <SecondaryValues />
 
           <div className="mt-10">
             <Link href="/about" className="btn-primary">
