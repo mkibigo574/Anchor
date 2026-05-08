@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink-700 font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tightest text-ink-900;
+  }
+  ::selection {
+    @apply bg-brand-100 text-brand-900;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:bg-brand-600 hover:shadow-elev focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ochre-500 px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:bg-ochre-600 hover:shadow-elev focus:outline-none focus-visible:ring-2 focus-visible:ring-ochre-400 focus-visible:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white border border-ink-200 px-6 py-3.5 text-sm font-semibold text-ink-900 transition hover:border-brand-500 hover:text-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-ink-900 transition hover:text-brand-500;
+  }
+  .btn-ghost-light {
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-cream-50 transition hover:text-sage-300;
+  }
+
+  /* Layout */
+  .container-wide {
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-6 lg:px-10;
+  }
+  .container-tight {
+    @apply mx-auto w-full max-w-5xl px-5 sm:px-6 lg:px-10;
+  }
+  .section {
+    @apply py-20 md:py-28;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-2xl bg-white shadow-soft ring-1 ring-ink-100 transition;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-elev hover:ring-brand-200;
+  }
+
+  /* Pills/badges */
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 text-brand-700 px-3.5 py-1.5 text-xs font-semibold tracking-wide;
+  }
+  .pill-orange {
+    @apply inline-flex items-center gap-2 rounded-full bg-ochre-50 text-ochre-700 px-3.5 py-1.5 text-xs font-semibold tracking-wide;
+  }
+  .pill-light {
+    @apply inline-flex items-center gap-2 rounded-full bg-white/10 text-white px-3.5 py-1.5 text-xs font-semibold tracking-wide ring-1 ring-white/20;
+  }
+  .dot-live {
+    @apply relative grid place-items-center;
+  }
+  .dot-live::before {
+    content: "";
+    @apply absolute h-2 w-2 rounded-full bg-ochre-500 animate-ping opacity-75;
+  }
+  .dot-live::after {
+    content: "";
+    @apply relative h-2 w-2 rounded-full bg-ochre-500;
+  }
+
+  /* Eyebrow */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-500;
+  }
+  .eyebrow-light {
+    @apply inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-sage-300;
+  }
+
+  /* Type scale */
+  .h1 {
+    @apply font-display font-extrabold text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] tracking-tightest text-ink-900;
+  }
+  .h2 {
+    @apply font-display font-extrabold text-[clamp(1.875rem,3.6vw,3rem)] leading-[1.1] tracking-tightest;
+  }
+  .h3 {
+    @apply font-display font-bold text-xl md:text-2xl tracking-tightlx;
+  }
+  .lede {
+    @apply text-base md:text-lg leading-relaxed text-ink-600;
+  }
+  .accent {
+    @apply text-ochre-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(12,34,64,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(12,34,64,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+}

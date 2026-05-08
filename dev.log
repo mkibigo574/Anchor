@@ -1,0 +1,24 @@
+
+> anchor-ndss@0.1.0 dev
+> next dev -p 3010
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3010
+
+ ✓ Starting...
+ ✓ Ready in 3.6s
+ ○ Compiling /about ...
+ ✓ Compiled / in 20.5s (610 modules)
+ GET /about 200 in 20557ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /about 200 in 578ms
+ GET / 200 in 2574ms
+ GET /_next/static/webpack/4ff4a6fe96a725d9.webpack.hot-update.json 404 in 21379ms
+ GET /about 200 in 362ms
+ GET /about 200 in 85ms
+ ✓ Compiled /services in 393ms (598 modules)
+ GET /services 200 in 621ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 661ms (604 modules)
+ GET /contact 200 in 822ms
+ GET / 200 in 141ms
