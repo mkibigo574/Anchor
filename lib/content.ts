@@ -54,7 +54,7 @@ export const navLinks: NavLink[] = [
   },
   { href: "/refer", label: "Refer a Participant" },
   { href: "/contact", label: "Contact Us" },
-  { href: "/careers", label: "Work With Us" },
+  { href: "/work-with-us", label: "Work With Us" },
   {
     label: "NDIS",
     children: [
