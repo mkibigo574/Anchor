@@ -101,25 +101,34 @@ export function HomeCarousel() {
                 aria-hidden={idx !== i}
               >
                 <div
-                  className="aspect-[16/9] md:aspect-[21/9] bg-cover bg-center"
+                  className="aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] bg-cover bg-center"
                   style={{ backgroundImage: `url('${s.image}')` }}
                   role="img"
                   aria-label={s.title}
                 />
+                {/* Bottom-to-top gradient for mobile readability */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-r from-brand-950/85 via-brand-900/55 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-t from-brand-950/95 via-brand-950/55 to-brand-950/15 sm:hidden"
+                  aria-hidden
+                />
+                {/* Left-to-right gradient for tablet/desktop */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-r from-brand-950/85 via-brand-900/55 to-transparent hidden sm:block"
                   aria-hidden
                 />
                 <div className="absolute inset-0 flex items-end md:items-center">
-                  <div className="px-6 py-8 md:px-12 md:py-12 lg:px-16 lg:py-16 max-w-2xl text-white">
+                  <div className="px-5 py-7 sm:px-8 sm:py-9 md:px-12 md:py-12 lg:px-16 lg:py-16 max-w-2xl text-white">
                     <span className="pill-light">{s.eyebrow}</span>
-                    <h3 className="font-display font-extrabold tracking-tightest leading-[1.05] text-[clamp(1.6rem,3.4vw,2.75rem)] mt-5 text-balance text-white drop-shadow-md">
+                    <h3 className="font-display font-extrabold tracking-tightest leading-[1.1] text-[clamp(1.35rem,4.5vw,2.75rem)] mt-4 sm:mt-5 text-balance text-white drop-shadow-md">
                       {s.title}
                     </h3>
-                    <p className="mt-4 text-cream-200 text-pretty text-sm md:text-base leading-relaxed max-w-lg">
+                    <p className="mt-3 sm:mt-4 text-cream-200 text-pretty text-sm md:text-base leading-relaxed max-w-lg line-clamp-3 sm:line-clamp-none">
                       {s.body}
                     </p>
-                    <Link href={s.href} className="btn-accent mt-6">
+                    <Link
+                      href={s.href}
+                      className="btn-accent mt-5 sm:mt-6 w-full sm:w-auto"
+                    >
                       {s.cta}
                       <ArrowUpRight className="h-4 w-4" />
                     </Link>

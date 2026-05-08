@@ -179,7 +179,7 @@ export function Footer() {
               </p>
             )}
           </div>
-          <div className="col-span-12 lg:col-span-5 flex lg:justify-end">
+          <div className="col-span-12 lg:col-span-5 flex justify-center sm:justify-start lg:justify-end">
             <div className="inline-flex items-center gap-4 rounded-2xl bg-white/5 ring-1 ring-white/10 px-5 py-4">
               <span className="grid place-items-center rounded-xl bg-white px-3 py-2 shadow-soft">
                 <Image

@@ -17,7 +17,7 @@ export function AboutBlock() {
               }}
             />
           </figure>
-          <div className="absolute -bottom-6 -left-4 lg:-left-8 bg-white rounded-2xl shadow-deep p-5 max-w-[230px] ring-1 ring-ink-100">
+          <div className="absolute -bottom-6 left-3 lg:-left-8 bg-white rounded-2xl shadow-deep p-4 sm:p-5 max-w-[200px] sm:max-w-[230px] ring-1 ring-ink-100">
             <div className="flex items-baseline gap-2">
               <span className="font-display font-extrabold text-3xl text-brand-500 tracking-tightest">
                 11+

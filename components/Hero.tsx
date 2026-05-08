@@ -84,14 +84,17 @@ export function Hero() {
             {heroCopy.sub}
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
-            <Link href={heroCopy.primaryCta.href} className="btn-accent">
+          <div className="mt-8 md:mt-9 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
+            <Link
+              href={heroCopy.primaryCta.href}
+              className="btn-accent w-full sm:w-auto"
+            >
               {heroCopy.primaryCta.label}
               <ArrowUpRight className="h-4 w-4" />
             </Link>
             <Link
               href={heroCopy.secondaryCta.href}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur ring-1 ring-white/25 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur ring-1 ring-white/25 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition w-full sm:w-auto"
             >
               {heroCopy.secondaryCta.label}
               <ArrowRight className="h-4 w-4" />
