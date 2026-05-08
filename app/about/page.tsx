@@ -109,7 +109,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ValuesGrid />
+      <ValuesGrid overlap={false} />
       <WhyChoose />
       <CtaBanner />
     </>

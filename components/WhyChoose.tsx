@@ -1,53 +1,47 @@
 import { whyChoose } from "@/lib/content";
-import { Sparkles, Users, Heart, Compass } from "lucide-react";
-
-const icons = [Sparkles, Users, Heart, Compass];
 
 export function WhyChoose() {
   return (
-    <section className="relative section bg-brand-950 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-[0.04] pointer-events-none" />
-      <div className="absolute -top-40 -right-32 h-[420px] w-[420px] rounded-full bg-brand-500/30 blur-3xl" />
-      <div className="absolute -bottom-40 -left-32 h-[420px] w-[420px] rounded-full bg-sage-500/15 blur-3xl" />
-
-      <div className="container-wide relative">
-        <div className="grid grid-cols-12 gap-10 mb-14 lg:mb-16">
-          <div className="col-span-12 lg:col-span-7">
-            <span className="eyebrow-light">Why Anchor</span>
-            <h2 className="h2 mt-4 text-balance text-white">
-              Built around the participant —{" "}
-              <span className="text-ochre-400">not the system</span>.
-            </h2>
-          </div>
-          <div className="col-span-12 lg:col-span-5">
-            <p className="lede text-cream-200 text-pretty">
-              Our supports are designed to grow your skills and confidence —
-              never your dependence on us. Choice and control sit with you, in
-              every conversation.
-            </p>
-          </div>
+    <section className="section bg-white">
+      <div className="container-wide">
+        <div className="max-w-3xl mb-12 lg:mb-16">
+          <span className="eyebrow">Warm &amp; Welcoming</span>
+          <h2 className="h2 mt-4 text-balance">
+            Why Choose Anchor as your{" "}
+            <span className="accent">NDIS Disability Service Provider</span>?
+          </h2>
+          <p className="lede mt-5 text-pretty">
+            We&rsquo;re built around the participant — not the system. From the
+            first conversation to long-term supports, here&rsquo;s what sets
+            Anchor apart.
+          </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-2">
           {whyChoose.map((w, i) => {
-            const Icon = icons[i % icons.length];
+            const Icon = w.icon;
+            const accent =
+              i % 2 === 0
+                ? { bg: "bg-brand-50", fg: "text-brand-600", ring: "ring-brand-100" }
+                : { bg: "bg-ochre-50", fg: "text-ochre-600", ring: "ring-ochre-100" };
             return (
               <div
                 key={w.title}
-                className="rounded-2xl bg-white/5 backdrop-blur-sm p-7 ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20 transition flex flex-col"
+                className="rounded-3xl bg-cream-100 ring-1 ring-ink-100 p-7 lg:p-8 flex gap-5 transition hover:bg-white hover:shadow-elev hover:-translate-y-1 hover:ring-brand-200"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-ochre-500 text-white shadow-soft">
-                  <Icon className="h-5.5 w-5.5" strokeWidth={2} />
+                <span
+                  className={`flex-shrink-0 grid h-14 w-14 place-items-center rounded-2xl ${accent.bg} ${accent.fg} ring-1 ${accent.ring}`}
+                >
+                  <Icon className="h-6 w-6" strokeWidth={2} />
                 </span>
-                <h3 className="font-display font-bold text-lg tracking-tightlx text-white mt-6">
-                  {w.title}
-                </h3>
-                <p className="mt-3 text-sm text-cream-200 leading-relaxed flex-1">
-                  {w.body}
-                </p>
-                <p className="mt-5 pt-5 border-t border-white/10 text-xs uppercase tracking-[0.14em] text-cream-300 font-semibold">
-                  0{i + 1} reason
-                </p>
+                <div>
+                  <h3 className="font-display font-bold text-lg lg:text-xl tracking-tightlx text-ink-900">
+                    {w.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-ink-600 leading-relaxed">
+                    {w.body}
+                  </p>
+                </div>
               </div>
             );
           })}

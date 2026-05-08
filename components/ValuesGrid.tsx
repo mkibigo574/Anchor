@@ -7,41 +7,33 @@ const accents = [
   { bg: "bg-brand-50", fg: "text-brand-600", ring: "ring-brand-100" }
 ];
 
-export function ValuesGrid() {
+export function ValuesGrid({ overlap = true }: { overlap?: boolean }) {
   return (
-    <section className="section bg-white">
+    <section
+      className={`relative z-10 ${
+        overlap ? "-mt-16 md:-mt-20" : "section bg-white"
+      }`}
+    >
       <div className="container-wide">
-        <div className="max-w-2xl mb-14 lg:mb-16">
-          <span className="eyebrow">Principles</span>
-          <h2 className="h2 mt-4 text-balance">
-            Anchored in what <span className="accent">matters most</span>.
-          </h2>
-          <p className="lede mt-5 text-pretty">
-            The principles that shape how we show up — for participants, their
-            families, and the wider community we serve.
-          </p>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v, i) => {
             const Icon = v.icon;
             const a = accents[i % accents.length];
             return (
               <div
                 key={v.title}
-                className="card card-hover p-7 flex flex-col"
+                className="group rounded-2xl bg-white p-6 shadow-elev ring-1 ring-ink-100 transition hover:-translate-y-1 hover:shadow-deep"
               >
                 <span
                   className={`grid h-12 w-12 place-items-center rounded-xl ${a.bg} ${a.fg} ring-1 ${a.ring}`}
                 >
                   <Icon className="h-5.5 w-5.5" strokeWidth={2} />
                 </span>
-                <h3 className="h3 mt-6 text-ink-900">{v.title}</h3>
-                <p className="mt-3 text-sm text-ink-600 leading-relaxed flex-1">
+                <h3 className="font-display font-bold text-lg tracking-tightlx text-ink-900 mt-5">
+                  {v.title}
+                </h3>
+                <p className="mt-2 text-sm text-ink-600 leading-relaxed">
                   {v.body}
-                </p>
-                <p className="mt-5 pt-5 border-t border-ink-100 text-xs uppercase tracking-[0.14em] text-ink-400 font-semibold">
-                  0{i + 1} / 0{values.length}
                 </p>
               </div>
             );
