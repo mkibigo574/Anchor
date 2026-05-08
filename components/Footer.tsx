@@ -94,7 +94,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: Useful Links */}
-          <div className="col-span-6 lg:col-span-3">
+          <div className="col-span-12 sm:col-span-6 lg:col-span-3">
             <p className="text-[11px] uppercase tracking-[0.18em] text-ochre-400 font-bold mb-5">
               Useful Links
             </p>
@@ -113,7 +113,7 @@ export function Footer() {
           </div>
 
           {/* Column 4: Services */}
-          <div className="col-span-6 lg:col-span-3">
+          <div className="col-span-12 sm:col-span-6 lg:col-span-3">
             <p className="text-[11px] uppercase tracking-[0.18em] text-ochre-400 font-bold mb-5">
               Services
             </p>

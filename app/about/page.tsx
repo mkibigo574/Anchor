@@ -47,7 +47,7 @@ export default function AboutPage() {
       />
 
       <section className="section bg-white">
-        <div className="container-wide grid grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="container-wide grid grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
           <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-32">
             <span className="eyebrow">Our Story</span>
             <h2 className="h2 mt-4 text-balance">

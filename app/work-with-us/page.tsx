@@ -59,7 +59,7 @@ export default function WorkWithUsPage() {
 
       {/* Why work with Anchor */}
       <section className="section bg-white">
-        <div className="container-wide grid grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="container-wide grid grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
           <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-32">
             <span className="eyebrow">Why Anchor</span>
             <h2 className="h2 mt-4 text-balance">
@@ -143,7 +143,7 @@ export default function WorkWithUsPage() {
 
       {/* Application form */}
       <section className="section bg-white">
-        <div className="container-wide grid grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="container-wide grid grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
           <div className="col-span-12 lg:col-span-5">
             <span className="eyebrow">Apply Now</span>
             <h2 className="h2 mt-4 text-balance">
@@ -181,7 +181,7 @@ export default function WorkWithUsPage() {
               action={`mailto:${company.email}?subject=Job%20Application`}
               method="post"
               encType="multipart/form-data"
-              className="card p-8 lg:p-10"
+              className="card p-6 sm:p-8 lg:p-10"
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Name" name="name" required />
@@ -216,12 +216,12 @@ export default function WorkWithUsPage() {
                   className="block w-full text-sm text-ink-700 file:mr-4 file:rounded-full file:border-0 file:bg-brand-500 file:text-white file:px-5 file:py-2.5 file:text-sm file:font-semibold file:hover:bg-brand-600 file:cursor-pointer cursor-pointer"
                 />
               </div>
-              <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
-                <p className="text-xs text-ink-500 max-w-xs leading-relaxed">
+              <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-4">
+                <p className="text-xs text-ink-500 sm:max-w-xs leading-relaxed">
                   By submitting, you consent to Anchor contacting you about
                   your application.
                 </p>
-                <button type="submit" className="btn-primary">
+                <button type="submit" className="btn-primary w-full sm:w-auto">
                   Apply
                   <ArrowUpRight className="h-4 w-4" />
                 </button>

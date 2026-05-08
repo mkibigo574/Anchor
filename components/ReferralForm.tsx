@@ -180,7 +180,7 @@ export function ReferralForm() {
 
   if (submitted) {
     return (
-      <div className="card p-10 lg:p-12 text-center">
+      <div className="card p-8 sm:p-10 lg:p-12 text-center">
         <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand-500 text-white shadow-soft">
           <CheckCircle2 className="h-7 w-7" />
         </div>
@@ -206,7 +206,7 @@ export function ReferralForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card p-8 lg:p-10">
+    <form onSubmit={handleSubmit} className="card p-6 sm:p-8 lg:p-10">
       <Steps current={step} />
 
       {step === 1 && (
@@ -405,18 +405,18 @@ export function ReferralForm() {
         </div>
       )}
 
-      <div className="mt-8 flex items-center justify-between gap-4">
+      <div className="mt-8 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
         {step > 1 ? (
           <button
             type="button"
             onClick={() => setStep((s) => s - 1)}
-            className="inline-flex items-center gap-2 rounded-full border border-ink-200 px-5 py-3 text-sm font-semibold text-ink-700 hover:bg-cream-100 transition"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 px-5 py-3 text-sm font-semibold text-ink-700 hover:bg-cream-100 transition w-full sm:w-auto"
           >
             <ArrowLeft className="h-4 w-4" />
             Back
           </button>
         ) : (
-          <span />
+          <span className="hidden sm:block" />
         )}
 
         {step < 3 ? (
@@ -424,7 +424,7 @@ export function ReferralForm() {
             type="button"
             disabled={!canAdvance()}
             onClick={() => setStep((s) => s + 1)}
-            className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
           >
             Next
             <ArrowRight className="h-4 w-4" />
@@ -433,7 +433,7 @@ export function ReferralForm() {
           <button
             type="submit"
             disabled={!canAdvance()}
-            className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
           >
             Send Referral
             <ArrowUpRight className="h-4 w-4" />

@@ -86,7 +86,7 @@ export default function FeedbackPage() {
 
       {/* Feedback form */}
       <section className="section bg-cream-100">
-        <div className="container-wide grid grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="container-wide grid grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
           <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-32">
             <span className="eyebrow">Send us your feedback</span>
             <h2 className="h2 mt-4 text-balance">
@@ -143,7 +143,7 @@ export default function FeedbackPage() {
               action={`mailto:${company.email}?subject=Feedback`}
               method="post"
               encType="text/plain"
-              className="card p-8 lg:p-10"
+              className="card p-6 sm:p-8 lg:p-10"
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Name" name="name" required />
@@ -197,12 +197,12 @@ export default function FeedbackPage() {
                   Submit this feedback anonymously
                 </label>
               </div>
-              <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
-                <p className="text-xs text-ink-500 max-w-xs leading-relaxed">
+              <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-4">
+                <p className="text-xs text-ink-500 sm:max-w-xs leading-relaxed">
                   We acknowledge feedback within 2 business days and respond
                   with next steps where appropriate.
                 </p>
-                <button type="submit" className="btn-primary">
+                <button type="submit" className="btn-primary w-full sm:w-auto">
                   Send Feedback
                   <ArrowUpRight className="h-4 w-4" />
                 </button>

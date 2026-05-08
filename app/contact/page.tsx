@@ -47,7 +47,7 @@ export default function ContactPage() {
       />
 
       <section className="section bg-white">
-        <div className="container-wide grid grid-cols-12 gap-10 lg:gap-12 items-start">
+        <div className="container-wide grid grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-start">
           <div className="col-span-12 lg:col-span-5">
             <span className="eyebrow">Reach Us</span>
             <h2 className="h2 mt-4 text-balance">
@@ -96,7 +96,7 @@ export default function ContactPage() {
           </div>
 
           <div className="col-span-12 lg:col-span-7">
-            <div className="card p-8 lg:p-10">
+            <div className="card p-6 sm:p-8 lg:p-10">
               <h3 className="font-display text-2xl font-bold tracking-tightlx text-ink-900">
                 Send us a message
               </h3>
@@ -132,12 +132,12 @@ export default function ContactPage() {
                     placeholder="Tell us about your support needs or NDIS plan..."
                   />
                 </div>
-                <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
-                  <p className="text-xs text-ink-500 max-w-xs leading-relaxed">
+                <div className="pt-2 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-4">
+                  <p className="text-xs text-ink-500 sm:max-w-xs leading-relaxed">
                     By submitting, you consent to Anchor contacting you about
                     your enquiry.
                   </p>
-                  <button type="submit" className="btn-primary">
+                  <button type="submit" className="btn-primary w-full sm:w-auto">
                     Send enquiry
                     <ArrowUpRight className="h-4 w-4" />
                   </button>
@@ -159,7 +159,7 @@ export default function ContactPage() {
               </h2>
             </div>
           </div>
-          <div className="aspect-[16/8] rounded-3xl overflow-hidden ring-1 ring-ink-100 shadow-soft">
+          <div className="aspect-[4/3] sm:aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden ring-1 ring-ink-100 shadow-soft">
             <iframe
               title="Anchor NDSS office location"
               src="https://www.google.com/maps?q=28+Coleman+Street,+Muirhead+NT+0810&output=embed"
