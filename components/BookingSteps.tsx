@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { bookingSteps } from "@/lib/content";
+import { Reveal } from "./Reveal";
 
 export function BookingSteps() {
   return (
     <section className="section bg-cream-100">
       <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
           <span className="eyebrow">Get Started</span>
           <h2 className="h2 mt-4 text-balance">
             Booking Your Support is <span className="accent">Easy</span>
@@ -14,9 +15,9 @@ export function BookingSteps() {
           <p className="lede mt-5 text-pretty">
             Three simple ways to start the conversation — choose what suits you.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <Reveal as="stagger" className="grid gap-6 md:grid-cols-3">
           {bookingSteps.map((s) => {
             const Icon = s.icon;
             return (
@@ -46,7 +47,7 @@ export function BookingSteps() {
               </div>
             );
           })}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

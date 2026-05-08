@@ -1,4 +1,5 @@
 import { values } from "@/lib/content";
+import { Reveal } from "./Reveal";
 
 const accents = [
   { bg: "bg-brand-50", fg: "text-brand-600", ring: "ring-brand-100" },
@@ -15,7 +16,7 @@ export function ValuesGrid({ overlap = true }: { overlap?: boolean }) {
       }`}
     >
       <div className="container-wide">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal as="stagger" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v, i) => {
             const Icon = v.icon;
             const a = accents[i % accents.length];
@@ -38,7 +39,7 @@ export function ValuesGrid({ overlap = true }: { overlap?: boolean }) {
               </div>
             );
           })}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

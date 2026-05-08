@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { ValuesGrid } from "@/components/ValuesGrid";
 import { AboutBlock } from "@/components/AboutBlock";
+import { HomeCarousel } from "@/components/HomeCarousel";
 import { TrustSafety } from "@/components/TrustSafety";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { BookingSteps } from "@/components/BookingSteps";
@@ -20,6 +21,8 @@ export default function HomePage() {
       <ValuesGrid />
       {/* 5. About + 3 secondary values */}
       <AboutBlock />
+      {/* 5.5 Photo carousel — Life with Anchor */}
+      <HomeCarousel />
       {/* 6. Skilled Team + Strong Values / Trust & Safety Focused */}
       <TrustSafety />
       {/* 7. Services (all 11, photo cards) */}

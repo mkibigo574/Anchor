@@ -15,7 +15,7 @@ export function TopBar() {
               <Phone className="h-3 w-3" />
             </span>
             <span>
-              <span className="text-cream-300 font-medium">Darwin Office</span>
+              <span className="text-cream-300 font-medium">Head Office</span>
               <span className="text-cream-400 mx-1.5">—</span>
               <span className="font-semibold text-white">{company.phone}</span>
             </span>

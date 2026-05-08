@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { services } from "@/lib/content";
+import { Reveal } from "./Reveal";
 
 export function ServicesGrid({
   showHeading = true
@@ -11,7 +12,7 @@ export function ServicesGrid({
     <section id="services" className="section bg-white scroll-mt-24">
       <div className="container-wide">
         {showHeading && (
-          <div className="grid grid-cols-12 gap-8 items-end mb-12 lg:mb-16">
+          <Reveal className="grid grid-cols-12 gap-8 items-end mb-12 lg:mb-16">
             <div className="col-span-12 lg:col-span-7">
               <span className="eyebrow">Our Services</span>
               <h2 className="h2 mt-4 text-balance">
@@ -25,10 +26,10 @@ export function ServicesGrid({
                 living to community participation — designed to grow with you.
               </p>
             </div>
-          </div>
+          </Reveal>
         )}
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <Reveal as="stagger" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((s) => (
             <Link
               key={s.slug}
@@ -55,7 +56,7 @@ export function ServicesGrid({
               </div>
             </Link>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

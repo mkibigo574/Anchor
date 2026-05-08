@@ -94,10 +94,34 @@ const config: Config = {
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "fade-up-lg": {
+          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        },
+        "ken-burns": {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.08)" }
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" }
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" }
         }
       },
       animation: {
-        "fade-up": "fade-up 0.5s ease-out forwards"
+        "fade-up": "fade-up 0.5s ease-out forwards",
+        "fade-up-lg": "fade-up-lg 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+        "ken-burns": "ken-burns 12s ease-out forwards",
+        "float-slow": "float-slow 4s ease-in-out infinite"
       }
     }
   },

@@ -144,7 +144,7 @@ export const services: Service[] = [
     long:
       "Our SIL services provide 24-hour assistance for participants who need consistent support to live in their own home. We focus on building daily routines, fostering relationships with housemates, and developing the skills participants need to live as independently as possible.",
     icon: Home,
-    image: "/images/walker-couch.webp"
+    image: "/images/sil-care.webp"
   },
   {
     slug: "ilo",
@@ -154,8 +154,7 @@ export const services: Service[] = [
     long:
       "ILO is about exploring and shaping a living arrangement that works for you — whether that's living alone with drop-in support, with a host family, or with chosen housemates. We help you design and trial what fits.",
     icon: Building2,
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/ilo.jpg"
   },
   {
     slug: "innovative-community-participation",
@@ -165,8 +164,7 @@ export const services: Service[] = [
     long:
       "We connect participants with new community-based experiences that build social skills, confidence, and a sense of belonging. Programs are tailored to your interests and culturally safe.",
     icon: Sparkles,
-    image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/community-innovation.jpg"
   },
   {
     slug: "home-care-support",
@@ -176,7 +174,7 @@ export const services: Service[] = [
     long:
       "Our team supports participants with the everyday tasks of running a home, helping you maintain a safe, clean, and comfortable living environment while building independence.",
     icon: HeartHandshake,
-    image: "/images/walker-indoor.webp"
+    image: "/images/home-care.jpg"
   },
   {
     slug: "support-coordination",
@@ -186,8 +184,7 @@ export const services: Service[] = [
     long:
       "We work with you to coordinate the right mix of supports, connect with quality providers, resolve issues, and prepare for plan reviews — so your plan delivers the outcomes you want.",
     icon: Compass,
-    image:
-      "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/support-coordination.webp"
   },
   {
     slug: "daily-living-life-skills",
@@ -197,8 +194,7 @@ export const services: Service[] = [
     long:
       "From budgeting and cooking to using public transport and self-care routines, we deliver structured skill development that grows your independence step-by-step.",
     icon: GraduationCap,
-    image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/daily-living-skills.webp"
   },
   {
     slug: "tenancy-assistance",
@@ -208,8 +204,7 @@ export const services: Service[] = [
     long:
       "We help you understand tenancy rights and obligations, navigate housing applications, communicate with landlords, and resolve issues — so you can stay safe, settled, and independent in your home.",
     icon: KeyRound,
-    image:
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/tenancy-home.jpg"
   },
   {
     slug: "daily-personal-activities",
@@ -219,8 +214,7 @@ export const services: Service[] = [
     long:
       "Our trained support workers assist with showering, dressing, grooming, mobility, medication prompts, and other activities of daily living — always with respect and your preferences front of mind.",
     icon: HandHeart,
-    image:
-      "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/personal-activities.jpg"
   },
   {
     slug: "transport-assistance",
@@ -230,8 +224,7 @@ export const services: Service[] = [
     long:
       "We provide safe, dignified transport supports that connect participants to medical appointments, social outings, employment, education, and community activities across the Northern Territory.",
     icon: Car,
-    image:
-      "https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/accessible-transport.jpg"
   },
   {
     slug: "household-tasks",
@@ -241,8 +234,7 @@ export const services: Service[] = [
     long:
       "Our support workers assist with the practical tasks of keeping a home running — from grocery shopping and meal preparation to laundry, cleaning, and yard upkeep — so daily life stays manageable.",
     icon: Brush,
-    image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/household-tasks.jpg"
   },
   {
     slug: "social-economic-community",
@@ -252,8 +244,7 @@ export const services: Service[] = [
     long:
       "We support participants to attend events, take part in cultural activities, volunteer, build economic independence, and engage in their community — so everyone has a place at the table.",
     icon: UsersRound,
-    image:
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=85"
+    image: "/images/social-community.jpg"
   }
 ];
 

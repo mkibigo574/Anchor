@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import {
   Phone,
@@ -10,7 +11,6 @@ import {
   Instagram,
   Linkedin,
   ArrowUpRight,
-  ShieldCheck,
   CheckCircle2
 } from "lucide-react";
 import { Logo } from "./Logo";
@@ -69,10 +69,10 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Darwin Office */}
+          {/* Column 2: Head Office */}
           <div className="col-span-12 md:col-span-6 lg:col-span-3">
             <p className="text-[11px] uppercase tracking-[0.18em] text-ochre-400 font-bold mb-5">
-              Darwin Office
+              Head Office
             </p>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
@@ -180,9 +180,15 @@ export function Footer() {
             )}
           </div>
           <div className="col-span-12 lg:col-span-5 flex lg:justify-end">
-            <div className="inline-flex items-center gap-3 rounded-2xl bg-white/5 ring-1 ring-white/10 px-5 py-4">
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-sage-500/20 text-sage-300">
-                <ShieldCheck className="h-6 w-6" />
+            <div className="inline-flex items-center gap-4 rounded-2xl bg-white/5 ring-1 ring-white/10 px-5 py-4">
+              <span className="grid place-items-center rounded-xl bg-white px-3 py-2 shadow-soft">
+                <Image
+                  src="/images/ndis-logo.png"
+                  alt="NDIS"
+                  width={120}
+                  height={50}
+                  className="h-8 w-auto"
+                />
               </span>
               <div className="leading-tight">
                 <p className="text-[10px] uppercase tracking-[0.18em] text-cream-400 font-bold">

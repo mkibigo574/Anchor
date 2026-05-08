@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight, ShieldCheck, BadgeCheck } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, BadgeCheck } from "lucide-react";
 import { ndisBanner } from "@/lib/content";
 
 export function NDISBanner() {
@@ -16,13 +17,16 @@ export function NDISBanner() {
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-white/15 blur-xl" />
               <div className="relative rounded-3xl bg-white p-7 shadow-deep ring-1 ring-white/40 max-w-[260px]">
-                <span className="grid h-16 w-16 place-items-center rounded-2xl bg-brand-500 text-white shadow-soft mx-auto">
-                  <ShieldCheck className="h-8 w-8" strokeWidth={2} />
-                </span>
-                <p className="mt-5 text-center text-[10px] uppercase tracking-[0.2em] text-ink-500 font-bold">
-                  NDIS
-                </p>
-                <p className="mt-1 text-center font-display font-extrabold text-xl text-ink-900 tracking-tightlx leading-tight">
+                <div className="flex justify-center">
+                  <Image
+                    src="/images/ndis-logo.png"
+                    alt="NDIS"
+                    width={180}
+                    height={75}
+                    className="h-[72px] w-auto"
+                  />
+                </div>
+                <p className="mt-5 text-center font-display font-extrabold text-xl text-ink-900 tracking-tightlx leading-tight">
                   Registered Provider
                 </p>
                 <div className="mt-4 flex items-center justify-center gap-1.5 text-xs text-sage-700 font-semibold">

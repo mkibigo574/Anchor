@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { secondaryValues } from "@/lib/content";
+import { Reveal } from "./Reveal";
 
 export function AboutBlock() {
   return (
     <section className="section bg-white">
       <div className="container-wide grid grid-cols-12 gap-10 lg:gap-16 items-start">
         {/* Tall portrait image — ~40% width on desktop */}
-        <div className="col-span-12 lg:col-span-5 relative">
+        <Reveal className="col-span-12 lg:col-span-5 relative">
           <figure className="aspect-[4/5] rounded-3xl overflow-hidden bg-ink-100 shadow-elev ring-1 ring-ink-100">
             <div
               className="h-full w-full bg-cover bg-center"
@@ -29,9 +30,9 @@ export function AboutBlock() {
               Tailored NDIS supports across the Northern Territory
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="col-span-12 lg:col-span-7 lg:pt-2">
+        <Reveal delay={120} className="col-span-12 lg:col-span-7 lg:pt-2">
           <span className="eyebrow">About Us</span>
           <h2 className="h2 mt-4 text-balance">
             More than a service provider — a{" "}
@@ -87,7 +88,7 @@ export function AboutBlock() {
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

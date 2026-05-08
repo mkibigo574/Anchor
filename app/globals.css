@@ -110,6 +110,60 @@
   .text-pretty {
     text-wrap: pretty;
   }
+  /* Scroll reveal — set initial state via .reveal, transition to .reveal-in */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger children when applied to a parent .reveal-stagger */
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-stagger.reveal-in > *:nth-child(1) { transition-delay: 0ms; }
+  .reveal-stagger.reveal-in > *:nth-child(2) { transition-delay: 80ms; }
+  .reveal-stagger.reveal-in > *:nth-child(3) { transition-delay: 160ms; }
+  .reveal-stagger.reveal-in > *:nth-child(4) { transition-delay: 240ms; }
+  .reveal-stagger.reveal-in > *:nth-child(5) { transition-delay: 320ms; }
+  .reveal-stagger.reveal-in > *:nth-child(6) { transition-delay: 400ms; }
+  .reveal-stagger.reveal-in > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Hero card lift utility — slight rise on hover for any .card-hover */
+  .lift-on-hover {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  }
+  .lift-on-hover:hover {
+    transform: translateY(-4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-stagger > *,
+    .lift-on-hover,
+    .animate-fade-up,
+    .animate-fade-up-lg,
+    .animate-fade-in,
+    .animate-ken-burns,
+    .animate-float-slow {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
   .bg-grid {
     background-image:
       linear-gradient(to right, rgba(12,34,64,0.04) 1px, transparent 1px),

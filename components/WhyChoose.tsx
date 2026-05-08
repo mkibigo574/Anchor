@@ -1,10 +1,11 @@
 import { whyChoose } from "@/lib/content";
+import { Reveal } from "./Reveal";
 
 export function WhyChoose() {
   return (
     <section className="section bg-white">
       <div className="container-wide">
-        <div className="max-w-3xl mb-12 lg:mb-16">
+        <Reveal className="max-w-3xl mb-12 lg:mb-16">
           <span className="eyebrow">Warm &amp; Welcoming</span>
           <h2 className="h2 mt-4 text-balance">
             Why Choose Anchor as your{" "}
@@ -15,9 +16,9 @@ export function WhyChoose() {
             first conversation to long-term supports, here&rsquo;s what sets
             Anchor apart.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <Reveal as="stagger" className="grid gap-5 sm:grid-cols-2">
           {whyChoose.map((w, i) => {
             const Icon = w.icon;
             const accent =
@@ -45,7 +46,7 @@ export function WhyChoose() {
               </div>
             );
           })}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
