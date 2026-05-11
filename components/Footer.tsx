@@ -16,12 +16,15 @@ import {
 import { Logo } from "./Logo";
 import { company, services, footerLinks } from "@/lib/content";
 
+const NEWSLETTER_ACCESS_KEY = "c1a24f69-93dd-42e7-9e28-5c6bd5b89903";
+
 export function Footer() {
   const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!valid) {
@@ -29,8 +32,35 @@ export function Footer() {
       return;
     }
     setError(null);
-    setSubmitted(true);
-    setEmail("");
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: NEWSLETTER_ACCESS_KEY,
+          subject: "New Newsletter Signup — Anchor NDSS",
+          from_name: "Anchor NDSS Newsletter",
+          email,
+          message: `New newsletter signup: ${email}`
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+        setEmail("");
+      } else {
+        setError(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -55,12 +85,17 @@ export function Footer() {
               <Mail className="h-4 w-4 text-sage-400" />
               {company.email}
             </a>
+            {/* TODO: replace href="#" with real Facebook / Instagram / LinkedIn URLs once accounts are live */}
             <div className="mt-6 flex gap-3">
-              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+              {[
+                { Icon: Facebook, label: "Facebook" },
+                { Icon: Instagram, label: "Instagram" },
+                { Icon: Linkedin, label: "LinkedIn" }
+              ].map(({ Icon, label }) => (
                 <a
-                  key={i}
+                  key={label}
                   href="#"
-                  aria-label="Social link"
+                  aria-label={label}
                   className="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20 transition"
                 >
                   <Icon className="h-4 w-4" />
@@ -163,9 +198,10 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="rounded-full bg-ochre-500 hover:bg-ochre-400 text-white font-semibold px-6 py-3 text-sm transition inline-flex items-center justify-center gap-2"
+                disabled={submitting}
+                className="rounded-full bg-ochre-500 hover:bg-ochre-400 text-white font-semibold px-6 py-3 text-sm transition inline-flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Submit
+                {submitting ? "Submitting..." : "Submit"}
                 <ArrowUpRight className="h-3.5 w-3.5" />
               </button>
             </form>

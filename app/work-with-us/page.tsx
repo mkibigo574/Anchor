@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { AppointmentCta } from "@/components/AppointmentCta";
 import { AcknowledgementOfCountry } from "@/components/AcknowledgementOfCountry";
+import { JobApplicationForm } from "@/components/JobApplicationForm";
 import { company } from "@/lib/content";
 import {
-  ArrowUpRight,
   CheckCircle2,
   ShieldCheck,
   Car,
@@ -177,56 +176,7 @@ export default function WorkWithUsPage() {
           </div>
 
           <div className="col-span-12 lg:col-span-7">
-            <form
-              action={`mailto:${company.email}?subject=Job%20Application`}
-              method="post"
-              encType="multipart/form-data"
-              className="card p-6 sm:p-8 lg:p-10"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Name" name="name" required />
-                <Field label="Phone" name="phone" type="tel" required />
-              </div>
-              <div className="mt-5">
-                <Field label="Email" name="email" type="email" required />
-              </div>
-              <div className="mt-5">
-                <Field label="Subject" name="subject" placeholder="e.g. Support Worker — Darwin" />
-              </div>
-              <div className="mt-5">
-                <label className="block text-xs uppercase tracking-[0.16em] text-ink-500 font-bold mb-2">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  rows={6}
-                  required
-                  className="w-full rounded-xl bg-cream-100 border border-ink-100 px-4 py-3 text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-brand-500 focus:bg-white transition resize-none text-sm"
-                  placeholder="Tell us about your experience, qualifications, and availability…"
-                />
-              </div>
-              <div className="mt-5">
-                <label className="block text-xs uppercase tracking-[0.16em] text-ink-500 font-bold mb-2">
-                  Resume (PDF or DOCX)
-                </label>
-                <input
-                  type="file"
-                  name="resume"
-                  accept=".pdf,.doc,.docx"
-                  className="block w-full text-sm text-ink-700 file:mr-4 file:rounded-full file:border-0 file:bg-brand-500 file:text-white file:px-5 file:py-2.5 file:text-sm file:font-semibold file:hover:bg-brand-600 file:cursor-pointer cursor-pointer"
-                />
-              </div>
-              <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-4">
-                <p className="text-xs text-ink-500 sm:max-w-xs leading-relaxed">
-                  By submitting, you consent to Anchor contacting you about
-                  your application.
-                </p>
-                <button type="submit" className="btn-primary w-full sm:w-auto">
-                  Apply
-                  <ArrowUpRight className="h-4 w-4" />
-                </button>
-              </div>
-            </form>
+            <JobApplicationForm />
           </div>
         </div>
       </section>
@@ -237,31 +187,3 @@ export default function WorkWithUsPage() {
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-  required = false,
-  placeholder
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-  placeholder?: string;
-}) {
-  return (
-    <div>
-      <label className="block text-xs uppercase tracking-[0.16em] text-ink-500 font-bold mb-2">
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        required={required}
-        placeholder={placeholder}
-        className="w-full rounded-xl bg-cream-100 border border-ink-100 px-4 py-3 text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-brand-500 focus:bg-white transition text-sm"
-      />
-    </div>
-  );
-}

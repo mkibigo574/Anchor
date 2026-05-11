@@ -1,12 +1,12 @@
 import { PageHero } from "@/components/PageHero";
 import { AppointmentCta } from "@/components/AppointmentCta";
 import { AcknowledgementOfCountry } from "@/components/AcknowledgementOfCountry";
+import { FeedbackForm } from "@/components/FeedbackForm";
 import { company } from "@/lib/content";
 import {
   Phone,
   Mail,
   MapPin,
-  ArrowUpRight,
   Facebook,
   Instagram,
   Linkedin,
@@ -139,75 +139,7 @@ export default function FeedbackPage() {
           </div>
 
           <div className="col-span-12 lg:col-span-7">
-            <form
-              action={`mailto:${company.email}?subject=Feedback`}
-              method="post"
-              encType="text/plain"
-              className="card p-6 sm:p-8 lg:p-10"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Name" name="name" required />
-                <Field label="Phone" name="phone" type="tel" />
-              </div>
-              <div className="mt-5">
-                <Field label="Email" name="email" type="email" required />
-              </div>
-              <div className="mt-5">
-                <label className="block text-xs uppercase tracking-[0.16em] text-ink-500 font-bold mb-2">
-                  Type of feedback
-                </label>
-                <select
-                  name="type"
-                  className="w-full rounded-xl bg-cream-100 border border-ink-100 px-4 py-3 text-ink-900 focus:outline-none focus:border-brand-500 focus:bg-white transition text-sm"
-                  defaultValue="General"
-                >
-                  <option>Compliment</option>
-                  <option>Suggestion</option>
-                  <option>Complaint</option>
-                  <option>General</option>
-                </select>
-              </div>
-              <div className="mt-5">
-                <Field
-                  label="Subject"
-                  name="subject"
-                  placeholder="Briefly describe your feedback"
-                />
-              </div>
-              <div className="mt-5">
-                <label className="block text-xs uppercase tracking-[0.16em] text-ink-500 font-bold mb-2">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  rows={6}
-                  required
-                  className="w-full rounded-xl bg-cream-100 border border-ink-100 px-4 py-3 text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-brand-500 focus:bg-white transition resize-none text-sm"
-                  placeholder="Tell us what happened, what worked well, or what we can do better…"
-                />
-              </div>
-              <div className="mt-5 flex items-center gap-2">
-                <input
-                  id="anon"
-                  type="checkbox"
-                  name="anonymous"
-                  className="h-4 w-4 rounded border-ink-200 text-brand-500 focus:ring-brand-400"
-                />
-                <label htmlFor="anon" className="text-sm text-ink-700">
-                  Submit this feedback anonymously
-                </label>
-              </div>
-              <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-4">
-                <p className="text-xs text-ink-500 sm:max-w-xs leading-relaxed">
-                  We acknowledge feedback within 2 business days and respond
-                  with next steps where appropriate.
-                </p>
-                <button type="submit" className="btn-primary w-full sm:w-auto">
-                  Send Feedback
-                  <ArrowUpRight className="h-4 w-4" />
-                </button>
-              </div>
-            </form>
+            <FeedbackForm />
           </div>
         </div>
       </section>
@@ -235,6 +167,7 @@ export default function FeedbackPage() {
                   hear from you.
                 </p>
               </div>
+              {/* TODO: replace href="#" with real Facebook / Instagram / LinkedIn URLs once accounts are live */}
               <div className="col-span-12 lg:col-span-5 flex lg:justify-end gap-3">
                 {[
                   { Icon: Facebook, label: "Facebook" },
@@ -262,31 +195,3 @@ export default function FeedbackPage() {
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-  required = false,
-  placeholder
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-  placeholder?: string;
-}) {
-  return (
-    <div>
-      <label className="block text-xs uppercase tracking-[0.16em] text-ink-500 font-bold mb-2">
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        required={required}
-        placeholder={placeholder}
-        className="w-full rounded-xl bg-cream-100 border border-ink-100 px-4 py-3 text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-brand-500 focus:bg-white transition text-sm"
-      />
-    </div>
-  );
-}

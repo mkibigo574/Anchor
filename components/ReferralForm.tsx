@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import {
+  AlertCircle,
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
@@ -9,6 +10,8 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { company } from "@/lib/content";
+
+const ACCESS_KEY = "f210c396-a269-471a-b254-4728a994fda6";
 
 const SUPPORT_OPTIONS = [
   "Assist Personal Activities",
@@ -98,6 +101,8 @@ export function ReferralForm() {
   const [step, setStep] = useState(1);
   const [data, setData] = useState<FormState>(initial);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) =>
     setData((d) => ({ ...d, [k]: v }));
@@ -142,9 +147,12 @@ export function ReferralForm() {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const lines = [
+    setSubmitting(true);
+    setErrorMessage("");
+
+    const summary = [
       "PARTICIPANT DETAILS",
       `Full Name: ${data.fullName}`,
       `Gender: ${data.gender}`,
@@ -170,12 +178,54 @@ export function ReferralForm() {
       `Email: ${data.contactEmail}`,
       `Best Time to Contact: ${data.bestTime || "Anytime"}`
     ].join("\n");
-    const subject = `Participant Referral – ${data.fullName}`;
-    const href = `mailto:${company.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(lines)}`;
-    window.location.href = href;
-    setSubmitted(true);
+
+    const payload = {
+      access_key: ACCESS_KEY,
+      subject: `Participant Referral – ${data.fullName}`,
+      from_name: "Anchor NDSS Referral Form",
+      name: data.contactName,
+      email: data.contactEmail,
+      phone: data.contactNumber,
+      participant_name: data.fullName,
+      participant_phone: data.phone,
+      participant_email: data.email,
+      participant_gender: data.gender,
+      participant_dob: data.dob,
+      participant_address: `${data.street}, ${data.suburb} ${data.state} ${data.postcode}`,
+      ndis_number: data.ndisNumber,
+      disability: data.disability,
+      frequency: data.frequency,
+      plan_start: data.planStart,
+      plan_end: data.planEnd,
+      budget: data.budget,
+      funds_management: data.fundsMgmt,
+      supports_needed: data.supports.join(", "),
+      additional_notes: data.notes,
+      referrer_role: data.contactRole,
+      best_time_to_contact: data.bestTime,
+      message: summary
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(result.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setErrorMessage("Network error. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -186,13 +236,11 @@ export function ReferralForm() {
         </div>
         <h3 className="h3 mt-6">Referral sent</h3>
         <p className="lede mt-4 text-pretty max-w-md mx-auto">
-          Your email client has opened with a summary of the referral. Please
-          send the message to complete the submission — our intake team will
-          respond within one business day.
+          Thank you for the referral. Our intake team will respond within one
+          business day.
         </p>
         <p className="mt-6 text-sm text-ink-500">
-          To share a copy of the NDIS plan, please attach it to that email or
-          send it separately to{" "}
+          To share a copy of the NDIS plan, please send it separately to{" "}
           <a
             className="font-semibold text-brand-500 hover:underline"
             href={`mailto:${company.email}`}
@@ -405,12 +453,20 @@ export function ReferralForm() {
         </div>
       )}
 
+      {errorMessage && (
+        <div className="mt-6 flex items-start gap-2 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+          <AlertCircle className="h-4 w-4 mt-0.5 flex-shrink-0" />
+          <span>{errorMessage}</span>
+        </div>
+      )}
+
       <div className="mt-8 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
         {step > 1 ? (
           <button
             type="button"
             onClick={() => setStep((s) => s - 1)}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 px-5 py-3 text-sm font-semibold text-ink-700 hover:bg-cream-100 transition w-full sm:w-auto"
+            disabled={submitting}
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 px-5 py-3 text-sm font-semibold text-ink-700 hover:bg-cream-100 transition w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ArrowLeft className="h-4 w-4" />
             Back
@@ -432,10 +488,10 @@ export function ReferralForm() {
         ) : (
           <button
             type="submit"
-            disabled={!canAdvance()}
+            disabled={!canAdvance() || submitting}
             className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
           >
-            Send Referral
+            {submitting ? "Sending..." : "Send Referral"}
             <ArrowUpRight className="h-4 w-4" />
           </button>
         )}
