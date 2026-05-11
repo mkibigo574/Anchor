@@ -2,7 +2,7 @@ import { PageHero } from "@/components/PageHero";
 import { AppointmentCta } from "@/components/AppointmentCta";
 import { AcknowledgementOfCountry } from "@/components/AcknowledgementOfCountry";
 import { FeedbackForm } from "@/components/FeedbackForm";
-import { company } from "@/lib/content";
+import { company, socials } from "@/lib/content";
 import {
   Phone,
   Mail,
@@ -167,22 +167,28 @@ export default function FeedbackPage() {
                   hear from you.
                 </p>
               </div>
-              {/* TODO: replace href="#" with real Facebook / Instagram / LinkedIn URLs once accounts are live */}
               <div className="col-span-12 lg:col-span-5 flex lg:justify-end gap-3">
                 {[
-                  { Icon: Facebook, label: "Facebook" },
-                  { Icon: Instagram, label: "Instagram" },
-                  { Icon: Linkedin, label: "LinkedIn" }
-                ].map(({ Icon, label }) => (
-                  <a
-                    key={label}
-                    href="#"
-                    aria-label={label}
-                    className="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 ring-1 ring-white/15 hover:bg-white/15 hover:ring-white/25 text-white transition"
-                  >
-                    <Icon className="h-5 w-5" />
-                  </a>
-                ))}
+                  { Icon: Facebook, label: "Facebook", href: socials.facebook },
+                  { Icon: Instagram, label: "Instagram", href: socials.instagram },
+                  { Icon: Linkedin, label: "LinkedIn", href: socials.linkedin }
+                ].map(({ Icon, label, href }) => {
+                  const isExternal = href.startsWith("http");
+                  return (
+                    <a
+                      key={label}
+                      href={href}
+                      aria-label={label}
+                      {...(isExternal && {
+                        target: "_blank",
+                        rel: "noopener noreferrer"
+                      })}
+                      className="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 ring-1 ring-white/15 hover:bg-white/15 hover:ring-white/25 text-white transition"
+                    >
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>

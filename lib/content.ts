@@ -36,6 +36,15 @@ export const company = {
   hours: "Mon – Fri: 8:30am – 5:00pm  ·  After-hours support available"
 };
 
+// Social media URLs. Use "#" for accounts that don't exist yet — the icon stays
+// visible but the link is inert.
+export const socials = {
+  facebook: "#",
+  instagram:
+    "https://www.instagram.com/anchorndss?igsh=cWJzamduZzF2czV1&utm_source=qr",
+  linkedin: "#"
+};
+
 // Full navigation with dropdowns (services + NDIS submenu)
 export type NavLink = {
   href?: string;

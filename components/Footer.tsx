@@ -14,7 +14,7 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { Logo } from "./Logo";
-import { company, services, footerLinks } from "@/lib/content";
+import { company, services, footerLinks, socials } from "@/lib/content";
 
 const NEWSLETTER_ACCESS_KEY = "c1a24f69-93dd-42e7-9e28-5c6bd5b89903";
 
@@ -85,22 +85,28 @@ export function Footer() {
               <Mail className="h-4 w-4 text-sage-400" />
               {company.email}
             </a>
-            {/* TODO: replace href="#" with real Facebook / Instagram / LinkedIn URLs once accounts are live */}
             <div className="mt-6 flex gap-3">
               {[
-                { Icon: Facebook, label: "Facebook" },
-                { Icon: Instagram, label: "Instagram" },
-                { Icon: Linkedin, label: "LinkedIn" }
-              ].map(({ Icon, label }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20 transition"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+                { Icon: Facebook, label: "Facebook", href: socials.facebook },
+                { Icon: Instagram, label: "Instagram", href: socials.instagram },
+                { Icon: Linkedin, label: "LinkedIn", href: socials.linkedin }
+              ].map(({ Icon, label, href }) => {
+                const isExternal = href.startsWith("http");
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    {...(isExternal && {
+                      target: "_blank",
+                      rel: "noopener noreferrer"
+                    })}
+                    className="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20 transition"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
