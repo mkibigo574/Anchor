@@ -30,7 +30,8 @@ export default function HomePage() {
       {/* 8. Booking Your Support is Easy — 3 step */}
       <BookingSteps />
       {/* 9. NDIS Registered Provider banner */}
-      <NDISBanner />
+      {/* TODO: Restore once owner receives NDIS registration licence */}
+      {/* <NDISBanner /> */}
       {/* 10. Why Choose Anchor */}
       <WhyChoose />
       {/* 11. Inspirational quote band */}

@@ -13,7 +13,8 @@ export function TrustSafety() {
           <h2 className="h2 mt-4 text-balance">
             <span className="accent">{trustSafety.title}</span>
           </h2>
-          <div className="mt-8 inline-flex items-center gap-4 rounded-2xl bg-white ring-1 ring-ink-100 px-5 py-4 shadow-soft">
+          {/* TODO: Restore NDIS Registered Provider badge once owner receives NDIS registration licence */}
+          {/* <div className="mt-8 inline-flex items-center gap-4 rounded-2xl bg-white ring-1 ring-ink-100 px-5 py-4 shadow-soft">
             <Image
               src="/images/ndis-logo.png"
               alt="NDIS"
@@ -27,7 +28,7 @@ export function TrustSafety() {
               </p>
               <p className="font-display font-bold text-ink-900">NDIS</p>
             </div>
-          </div>
+          </div> */}
         </Reveal>
 
         <Reveal delay={120} className="col-span-12 lg:col-span-7">

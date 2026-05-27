@@ -61,7 +61,8 @@ export function Hero() {
 
       <div className="container-wide relative pt-20 md:pt-28 pb-24 md:pb-32 lg:pb-40">
         <div className="max-w-3xl text-white animate-fade-up-lg">
-          <span className="pill-light !pl-1">
+          {/* TODO: Restore Registered NDIS Provider pill once owner receives NDIS registration licence */}
+          {/* <span className="pill-light !pl-1">
             <span className="grid place-items-center rounded-full bg-white px-1.5 py-1 shadow-sm">
               <Image
                 src="/images/ndis-logo.png"
@@ -72,7 +73,7 @@ export function Hero() {
               />
             </span>
             Registered NDIS Provider
-          </span>
+          </span> */}
 
           <h1 className="font-display font-extrabold tracking-tightest leading-[1.04] text-[clamp(2.5rem,5.4vw,4.75rem)] mt-7 text-white text-balance">
             {heroCopy.headlineLine1}

@@ -73,10 +73,15 @@ export function Footer() {
           {/* Column 1: Logo, blurb, email */}
           <div className="col-span-12 md:col-span-6 lg:col-span-3">
             <Logo variant="light" />
-            <p className="mt-6 text-cream-300 leading-relaxed text-pretty text-sm">
+            {/* TODO: Restore "a registered NDIS provider" wording once owner receives NDIS registration licence */}
+            {/* <p className="mt-6 text-cream-300 leading-relaxed text-pretty text-sm">
               {company.longName} — a registered NDIS provider delivering
               person-centred disability and nursing supports across the Northern
               Territory.
+            </p> */}
+            <p className="mt-6 text-cream-300 leading-relaxed text-pretty text-sm">
+              {company.longName} — an NDIS provider delivering person-centred
+              disability and nursing supports across the Northern Territory.
             </p>
             <a
               href={`mailto:${company.email}`}
@@ -221,7 +226,8 @@ export function Footer() {
               </p>
             )}
           </div>
-          <div className="col-span-12 lg:col-span-5 flex justify-center sm:justify-start lg:justify-end">
+          {/* TODO: Restore NDIS Registered Provider badge once owner receives NDIS registration licence */}
+          {/* <div className="col-span-12 lg:col-span-5 flex justify-center sm:justify-start lg:justify-end">
             <div className="inline-flex items-center gap-4 rounded-2xl bg-white/5 ring-1 ring-white/10 px-5 py-4">
               <span className="grid place-items-center rounded-xl bg-white px-3 py-2 shadow-soft">
                 <Image
@@ -239,7 +245,7 @@ export function Footer() {
                 <p className="font-display font-bold text-white">NDIS</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3">

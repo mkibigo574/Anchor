@@ -8,13 +8,19 @@ export const metadata: Metadata = {
     default: "Anchor NDSS — Care That Anchors. Support That Empowers.",
     template: "%s | Anchor NDSS"
   },
+  // TODO: Restore "registered NDIS provider" wording once owner receives NDIS registration licence
+  // description:
+  //   "Anchor Nursing & Disability Support Services is a registered NDIS provider delivering person-centred disability and community-based supports across the Northern Territory.",
   description:
-    "Anchor Nursing & Disability Support Services is a registered NDIS provider delivering person-centred disability and community-based supports across the Northern Territory.",
+    "Anchor Nursing & Disability Support Services is an NDIS provider delivering person-centred disability and community-based supports across the Northern Territory.",
   metadataBase: new URL("https://anchornds.com.au"),
   openGraph: {
     title: "Anchor NDSS — Care That Anchors. Support That Empowers.",
+    // TODO: Restore "Registered NDIS provider" wording once owner receives NDIS registration licence
+    // description:
+    //   "Registered NDIS provider in Darwin, NT. Person-centred disability and nursing supports.",
     description:
-      "Registered NDIS provider in Darwin, NT. Person-centred disability and nursing supports.",
+      "NDIS provider in Darwin, NT. Person-centred disability and nursing supports.",
     type: "website"
   }
 };

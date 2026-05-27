@@ -32,7 +32,9 @@ export const company = {
   email: "hello@anchornds.com.au",
   address: "28 Coleman Street, Muirhead, NT 0810",
   city: "Darwin",
-  abnLine: "Registered NDIS Provider · Northern Territory, Australia",
+  // TODO: Restore "Registered NDIS Provider · " prefix once owner receives NDIS registration licence
+  // abnLine: "Registered NDIS Provider · Northern Territory, Australia",
+  abnLine: "Northern Territory, Australia",
   hours: "Mon – Fri: 8:30am – 5:00pm  ·  After-hours support available"
 };
 
@@ -271,7 +273,9 @@ export const trustSafety = {
   eyebrow: "Skilled Team + Strong Values",
   title: "Trust & Safety Focused",
   paragraphs: [
-    "Every Anchor support worker is screened, qualified, and inducted to the standards expected of a registered NDIS provider — so participants and their families can feel safe from the very first conversation.",
+    // TODO: Restore "of a registered NDIS provider" wording once owner receives NDIS registration licence
+    // "Every Anchor support worker is screened, qualified, and inducted to the standards expected of a registered NDIS provider — so participants and their families can feel safe from the very first conversation.",
+    "Every Anchor support worker is screened, qualified, and inducted to the highest standards of practice — so participants and their families can feel safe from the very first conversation.",
     "Our team is trained in person-centred practice, cultural safety, manual handling, medication support, and safeguarding. We invest in continuous professional development because the people we support deserve the best.",
     "Behind every shift is a backbone of clinical oversight, robust documentation, and clear escalation pathways. When something needs attention, it gets attention — fast.",
     "We hold ourselves accountable to the NDIS Practice Standards, the NDIS Code of Conduct, and the Quality and Safeguards Commission — and we welcome feedback as a way to keep getting better.",
@@ -307,6 +311,8 @@ export const bookingSteps = [
 ];
 
 // NDIS banner copy
+// TODO: Banner is currently hidden in app/page.tsx until owner receives NDIS registration licence.
+// Keep this export here so wording is ready to restore.
 export const ndisBanner = {
   title: "Proudly NDIS Registered Provider",
   paragraphs: [
