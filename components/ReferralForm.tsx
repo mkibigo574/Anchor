@@ -11,8 +11,6 @@ import {
 } from "lucide-react";
 import { company } from "@/lib/content";
 
-const ACCESS_KEY = "f210c396-a269-471a-b254-4728a994fda6";
-
 const SUPPORT_OPTIONS = [
   "Assist Personal Activities",
   "Group / Centre Activities",
@@ -180,34 +178,16 @@ export function ReferralForm() {
     ].join("\n");
 
     const payload = {
-      access_key: ACCESS_KEY,
-      subject: `Participant Referral – ${data.fullName}`,
-      from_name: "Anchor NDSS Referral Form",
+      _subject: `Participant Referral – ${data.fullName}`,
+      _form: "Referral form",
       name: data.contactName,
       email: data.contactEmail,
       phone: data.contactNumber,
-      participant_name: data.fullName,
-      participant_phone: data.phone,
-      participant_email: data.email,
-      participant_gender: data.gender,
-      participant_dob: data.dob,
-      participant_address: `${data.street}, ${data.suburb} ${data.state} ${data.postcode}`,
-      ndis_number: data.ndisNumber,
-      disability: data.disability,
-      frequency: data.frequency,
-      plan_start: data.planStart,
-      plan_end: data.planEnd,
-      budget: data.budget,
-      funds_management: data.fundsMgmt,
-      supports_needed: data.supports.join(", "),
-      additional_notes: data.notes,
-      referrer_role: data.contactRole,
-      best_time_to_contact: data.bestTime,
       message: summary
     };
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

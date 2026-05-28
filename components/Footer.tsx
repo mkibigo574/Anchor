@@ -16,8 +16,6 @@ import {
 import { Logo } from "./Logo";
 import { company, services, footerLinks, socials } from "@/lib/content";
 
-const NEWSLETTER_ACCESS_KEY = "c1a24f69-93dd-42e7-9e28-5c6bd5b89903";
-
 export function Footer() {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -35,16 +33,15 @@ export function Footer() {
     setSubmitting(true);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json"
         },
         body: JSON.stringify({
-          access_key: NEWSLETTER_ACCESS_KEY,
-          subject: "New Newsletter Signup — Anchor NDSS",
-          from_name: "Anchor NDSS Newsletter",
+          _subject: "New Newsletter Signup — Anchor NDSS",
+          _form: "Newsletter signup",
           email,
           message: `New newsletter signup: ${email}`
         })

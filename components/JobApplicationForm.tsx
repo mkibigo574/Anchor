@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight, CheckCircle2, AlertCircle } from "lucide-react";
 
-const ACCESS_KEY = "11ec50db-9a43-4274-bb89-2564be51cf36";
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB Web3Forms limit
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
 export function JobApplicationForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -26,7 +25,7 @@ export function JobApplicationForm() {
     }
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         body: formData
       });
@@ -67,8 +66,8 @@ export function JobApplicationForm() {
 
   return (
     <form onSubmit={onSubmit} className="card p-6 sm:p-8 lg:p-10">
-      <input type="hidden" name="access_key" value={ACCESS_KEY} />
-      <input type="hidden" name="from_name" value="Anchor NDSS Careers" />
+      <input type="hidden" name="_subject" value="New Job Application — Anchor NDSS" />
+      <input type="hidden" name="_form" value="Careers form" />
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="grid gap-5 sm:grid-cols-2">

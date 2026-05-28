@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { ArrowUpRight, CheckCircle2, AlertCircle } from "lucide-react";
 
-const ACCESS_KEY = "066d342d-0afe-4a24-bd32-852cfe65c7d3";
-
 export function FeedbackForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
@@ -18,7 +16,7 @@ export function FeedbackForm() {
     const formData = new FormData(form);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         body: formData
       });
@@ -59,8 +57,8 @@ export function FeedbackForm() {
 
   return (
     <form onSubmit={onSubmit} className="card p-6 sm:p-8 lg:p-10">
-      <input type="hidden" name="access_key" value={ACCESS_KEY} />
-      <input type="hidden" name="from_name" value="Anchor NDSS Feedback Form" />
+      <input type="hidden" name="_subject" value="New Feedback — Anchor NDSS" />
+      <input type="hidden" name="_form" value="Feedback form" />
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="grid gap-5 sm:grid-cols-2">
