@@ -3,7 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { AppointmentCta } from "@/components/AppointmentCta";
 import { AcknowledgementOfCountry } from "@/components/AcknowledgementOfCountry";
 import { company } from "@/lib/content";
-import { Scale, FileWarning } from "lucide-react";
+import { Scale, FileText } from "lucide-react";
 
 export const metadata = {
   title: "Terms of Service",
@@ -100,19 +100,17 @@ export default function TermsPage() {
 
       <section className="section bg-white">
         <div className="container-wide max-w-4xl">
-          <div className="card p-6 sm:p-8 flex items-start gap-4 bg-ochre-50 border border-ochre-200">
-            <FileWarning className="h-5 w-5 text-ochre-600 mt-0.5 flex-shrink-0" />
+          <div className="card p-6 sm:p-8 flex items-start gap-4 bg-brand-50 border border-brand-100">
+            <FileText className="h-5 w-5 text-brand-600 mt-0.5 flex-shrink-0" />
             <div className="text-sm text-ink-700 leading-relaxed">
-              <strong className="text-ink-900">Draft — pending legal review.</strong>{" "}
-              This document is provided as a starting template. Please have it
-              reviewed by qualified legal counsel before publishing the
-              website. Last reviewed:{" "}
-              {new Date().toLocaleDateString("en-AU", {
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-              })}
-              .
+              <strong className="text-ink-900">Version 1.0.</strong>{" "}
+              These Terms govern your use of the Anchor website and sit alongside
+              our{" "}
+              <Link href="/privacy" className="font-semibold text-brand-500 hover:underline">
+                Privacy Policy
+              </Link>
+              . Effective April 2026 · Reviewed at least annually · Next
+              scheduled review April 2027.
             </div>
           </div>
 
