@@ -6,3 +6,6 @@ out
 .DS_Store
 next-env.d.ts
 tsconfig.tsbuildinfo
+
+# Internal policy/procedure documents — not for the repo
+Core Module - Policy and Procedure Manual*.pdf
