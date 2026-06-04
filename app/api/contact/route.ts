@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const TO = "inquiries@anchornds.com.au";
+const TO = "hello@anchornds.com.au";
 const FROM = "Anchor NDSS <hello@anchornds.com.au>";
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
