@@ -1,4 +1,4 @@
-import { PageHero } from "@/components/PageHero";
+import Image from "next/image";
 import { BookingSection } from "@/components/BookingSection";
 import { CtaBanner } from "@/components/CtaBanner";
 import { AcknowledgementOfCountry } from "@/components/AcknowledgementOfCountry";
@@ -114,12 +114,30 @@ const pillars = [
 export default function EmploymentPage() {
   return (
     <>
-      <PageHero
-        eyebrow="NDIS Employment Services"
-        title="Building skills."
-        emphasized="Creating opportunities"
-        description="Personalised support to prepare for, find, and maintain meaningful employment — whether it's your first job, a return to work, or building skills for the future."
-      />
+      {/* Hero banner */}
+      <section className="relative bg-gradient-to-b from-cream-100 to-white border-b border-ink-100 overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-40 mask-fade-b pointer-events-none" />
+        <div className="absolute -top-24 -right-32 h-[420px] w-[420px] rounded-full bg-brand-100 blur-3xl opacity-60 pointer-events-none" />
+        <div className="container-tight relative py-10 sm:py-14 md:py-16">
+          <span className="eyebrow">NDIS Employment Services</span>
+          <h1 className="sr-only">
+            NDIS Employment Services — building skills, creating
+            opportunities, and supporting employment futures across regional
+            and remote Australia.
+          </h1>
+          <div className="mt-5 overflow-hidden rounded-3xl shadow-deep ring-1 ring-ink-100">
+            <Image
+              src="/images/employment-hero.jpg"
+              alt="An Anchor NDSS employment support worker helping a participant complete paperwork at an outdoor table in a remote Northern Territory community, with overlaid text reading: Building skills. Creating opportunities. Supporting futures. Employment support that empowers individuals and strengthens communities."
+              width={1536}
+              height={1024}
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Intro */}
       <section className="section bg-white">
