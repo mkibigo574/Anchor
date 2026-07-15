@@ -262,10 +262,13 @@ export const services: Service[] = [
 // populate Services dropdown for nav
 navLinks.forEach((l) => {
   if (l.label === "Services" && l.children) {
-    l.children = services.map((s) => ({
-      href: `/services#${s.slug}`,
-      label: s.title.replace(" — 24/7 Care", "")
-    }));
+    l.children = [
+      ...services.map((s) => ({
+        href: `/services#${s.slug}`,
+        label: s.title.replace(" — 24/7 Care", "")
+      })),
+      { href: "/employment", label: "NDIS Employment Services" }
+    ];
   }
 });
 
@@ -384,6 +387,7 @@ export const footerLinks = {
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
+    { href: "/employment", label: "Employment Services" },
     { href: "/contact", label: "Contact Us" },
     { href: "/feedback", label: "Feedback & Complaints" },
     { href: "/advocacy", label: "Advocacy" },
