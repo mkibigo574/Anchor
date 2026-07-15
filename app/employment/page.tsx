@@ -118,6 +118,7 @@ export default function EmploymentPage() {
       <section className="relative bg-gradient-to-b from-cream-100 to-white border-b border-ink-100 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-40 mask-fade-b pointer-events-none" />
         <div className="absolute -top-24 -right-32 h-[420px] w-[420px] rounded-full bg-brand-100 blur-3xl opacity-60 pointer-events-none" />
+        <div className="absolute top-1/3 -left-40 h-80 w-80 rounded-full bg-ochre-100 blur-3xl opacity-50 pointer-events-none" />
         <div className="container-tight relative py-10 sm:py-14 md:py-16">
           <span className="eyebrow">NDIS Employment Services</span>
           <h1 className="sr-only">
@@ -125,16 +126,22 @@ export default function EmploymentPage() {
             opportunities, and supporting employment futures across regional
             and remote Australia.
           </h1>
-          <div className="mt-5 overflow-hidden rounded-3xl shadow-deep ring-1 ring-ink-100">
-            <Image
-              src="/images/employment-hero.jpg"
-              alt="An Anchor NDSS employment support worker helping a participant complete paperwork at an outdoor table in a remote Northern Territory community, with overlaid text reading: Building skills. Creating opportunities. Supporting futures. Employment support that empowers individuals and strengthens communities."
-              width={1536}
-              height={1024}
-              priority
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="w-full h-auto"
-            />
+          <div className="mt-6 relative">
+            {/* soft ambient glow so the photo settles into the page */}
+            <div className="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-tr from-brand-200/40 via-transparent to-ochre-200/40 blur-2xl opacity-70 pointer-events-none" />
+            <div className="relative overflow-hidden rounded-3xl shadow-elev ring-1 ring-white/60">
+              <Image
+                src="/images/employment-hero.jpg"
+                alt="An Anchor NDSS employment support worker helping a participant complete paperwork at an outdoor table in a remote Northern Territory community, with overlaid text reading: Building skills. Creating opportunities. Supporting futures. Employment support that empowers individuals and strengthens communities."
+                width={1536}
+                height={1024}
+                priority
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="w-full h-auto"
+              />
+              {/* feather the top edge into the cream background */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-cream-100/70 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
