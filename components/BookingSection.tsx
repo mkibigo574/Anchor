@@ -36,14 +36,14 @@ export function BookingSection() {
   return (
     <section className="section bg-cream-100">
       <div className="container-wide">
-        <div className="grid grid-cols-12 gap-8 items-end mb-14 lg:mb-16">
-          <div className="col-span-12 lg:col-span-7">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14 lg:mb-16">
+          <div className="lg:col-span-7">
             <span className="eyebrow">Get Started</span>
             <h2 className="h2 mt-4 text-balance">
               Three easy ways to <span className="accent">get in touch</span>.
             </h2>
           </div>
-          <div className="col-span-12 lg:col-span-5">
+          <div className="lg:col-span-5">
             <p className="lede text-pretty">
               Whether you're a participant, family member, or coordinator —
               we'll get back to you fast.
@@ -58,7 +58,7 @@ export function BookingSection() {
               <Link
                 key={m.label}
                 href={m.href}
-                className="group card card-hover p-8 flex flex-col"
+                className="group card card-hover p-8 flex flex-col min-w-0"
               >
                 <span
                   className={`grid h-14 w-14 place-items-center rounded-2xl ${m.tone} text-white shadow-soft`}

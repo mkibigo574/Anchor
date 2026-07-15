@@ -90,9 +90,9 @@ export function AcknowledgementOfCountry() {
           <p className="mt-5 text-ink-700 leading-relaxed text-pretty">
             {acknowledgement.body}
           </p>
-          <div className="mt-9 flex items-center justify-center gap-5 md:gap-7">
+          <div className="mt-9 flex items-center justify-center gap-4 sm:gap-6 md:gap-7">
             <figure className="flex flex-col items-center">
-              <span className="block w-24 md:w-28 aspect-[3/2] overflow-hidden rounded-md ring-1 ring-ink-200 shadow-soft">
+              <span className="block w-20 sm:w-24 md:w-28 aspect-[3/2] overflow-hidden rounded-md ring-1 ring-ink-200 shadow-soft">
                 <AboriginalFlag />
               </span>
               <figcaption className="mt-2 text-[11px] uppercase tracking-[0.14em] text-ink-500 font-semibold">
@@ -100,7 +100,7 @@ export function AcknowledgementOfCountry() {
               </figcaption>
             </figure>
             <figure className="flex flex-col items-center">
-              <span className="block w-24 md:w-28 aspect-[3/2] overflow-hidden rounded-md ring-1 ring-ink-200 shadow-soft">
+              <span className="block w-20 sm:w-24 md:w-28 aspect-[3/2] overflow-hidden rounded-md ring-1 ring-ink-200 shadow-soft">
                 <TorresStraitFlag />
               </span>
               <figcaption className="mt-2 text-[11px] uppercase tracking-[0.14em] text-ink-500 font-semibold">
@@ -108,7 +108,7 @@ export function AcknowledgementOfCountry() {
               </figcaption>
             </figure>
             <figure className="flex flex-col items-center">
-              <span className="block w-24 md:w-28 aspect-[3/2] overflow-hidden rounded-md ring-1 ring-ink-200 shadow-soft">
+              <span className="block w-20 sm:w-24 md:w-28 aspect-[3/2] overflow-hidden rounded-md ring-1 ring-ink-200 shadow-soft">
                 <AustralianFlag />
               </span>
               <figcaption className="mt-2 text-[11px] uppercase tracking-[0.14em] text-ink-500 font-semibold">

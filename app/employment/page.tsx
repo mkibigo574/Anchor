@@ -148,15 +148,15 @@ export default function EmploymentPage() {
 
       {/* Intro */}
       <section className="section bg-white">
-        <div className="container-wide grid grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
-          <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-32">
+        <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
             <span className="eyebrow">Supporting Your Journey</span>
             <h2 className="h2 mt-4 text-balance">
               Everyone deserves the chance to{" "}
               <span className="accent">achieve their goals</span>.
             </h2>
           </div>
-          <div className="col-span-12 lg:col-span-7 space-y-5 text-ink-700 leading-relaxed text-pretty text-lg">
+          <div className="lg:col-span-7 space-y-5 text-ink-700 leading-relaxed text-pretty text-lg">
             <p>
               At Anchor Nursing &amp; Disability Support Services, we believe
               everyone deserves the opportunity to build meaningful skills, gain
@@ -181,9 +181,9 @@ export default function EmploymentPage() {
             return (
               <article
                 key={p.eyebrow}
-                className="card p-8 md:p-10 lg:p-12 grid grid-cols-12 gap-8 items-start"
+                className="card p-8 md:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
               >
-                <div className="col-span-12 lg:col-span-4">
+                <div className="lg:col-span-4">
                   <span
                     className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${p.tone} text-white shadow-soft`}
                   >
@@ -194,7 +194,7 @@ export default function EmploymentPage() {
                     {p.title}
                   </h3>
                 </div>
-                <div className="col-span-12 lg:col-span-8 space-y-4 text-ink-700 leading-relaxed text-pretty text-lg">
+                <div className="lg:col-span-8 space-y-4 text-ink-700 leading-relaxed text-pretty text-lg">
                   {p.paragraphs.map((para, i) => (
                     <p key={i}>{para}</p>
                   ))}
@@ -241,8 +241,8 @@ export default function EmploymentPage() {
 
       {/* Our Approach */}
       <section className="section bg-cream-100">
-        <div className="container-wide grid grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
-          <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-32">
+        <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
             <span className="eyebrow">Our Approach</span>
             <h2 className="h2 mt-4 text-balance">
               We don&rsquo;t just help you find a job —{" "}
@@ -252,7 +252,7 @@ export default function EmploymentPage() {
               Your goals. Your future. Our support.
             </p>
           </div>
-          <div className="col-span-12 lg:col-span-7 space-y-5 text-ink-700 leading-relaxed text-pretty text-lg">
+          <div className="lg:col-span-7 space-y-5 text-ink-700 leading-relaxed text-pretty text-lg">
             <p>
               Our programs are practical, engaging, and outcome-focused. We focus
               on building each participant&rsquo;s capacity to become confident,

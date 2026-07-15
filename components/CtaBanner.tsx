@@ -17,8 +17,8 @@ export function CtaBanner() {
           <div className="absolute inset-0 bg-gradient-to-br from-brand-900 via-brand-900/85 to-brand-700/60" />
           <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-ochre-500/20 blur-3xl" />
 
-          <div className="relative grid grid-cols-12 gap-10 items-end">
-            <div className="col-span-12 lg:col-span-7">
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+            <div className="lg:col-span-7">
               <span className="pill-light">
                 <span className="dot-live h-2 w-2" />
                 <span className="ml-1.5">Free consultation available</span>
@@ -33,7 +33,7 @@ export function CtaBanner() {
               </p>
             </div>
 
-            <div className="col-span-12 lg:col-span-5">
+            <div className="lg:col-span-5">
               <div className="flex flex-col gap-3">
                 <Link href="/contact" className="btn-accent w-full">
                   Book a free consultation
