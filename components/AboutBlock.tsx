@@ -41,8 +41,8 @@ export function AboutBlock() {
 
           <div className="mt-6 space-y-4 text-ink-700 leading-relaxed text-pretty">
             <p>
-              Anchor Nursing &amp; Disability Support Services is a registered
-              NDIS provider based in Darwin, delivering high-quality,
+              Anchor Nursing &amp; Disability Support Services is {/* THIS SECTION TO BE REINSTATED UPON OWNER RECEIVING NDIS REGISTRATION "a registered
+              NDIS provider "*/} based in Darwin, delivering high-quality,
               person-centred disability and community-based supports across the
               Northern Territory.
             </p>
