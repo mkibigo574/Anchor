@@ -77,7 +77,7 @@ export function Footer() {
               Territory.
             </p> */}
             <p className="mt-6 text-cream-300 leading-relaxed text-pretty text-sm">
-              {company.longName} — an NDIS provider delivering person-centred
+              {company.longName} — {/* TO BE REINSTATED ONCE OWNER RECEIVES NDIS REGISTRATION "an NDIS provider" */} delivering person-centred
               disability and nursing supports across the Northern Territory.
             </p>
             <a
