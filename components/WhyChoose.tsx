@@ -9,8 +9,8 @@ export function WhyChoose() {
           <span className="eyebrow">Warm &amp; Welcoming</span>
           <h2 className="h2 mt-4 text-balance">
             Why Choose Anchor {/* TO BE REINSTATED ONCE OWNER RECEIVES REGISTRATION "as your{" "}
-            <span className="accent">NDIS Disability Service Provider</span>?
-          </h2>" */} 
+            <span className="accent">NDIS Disability Service Provider</span>? */}
+          </h2>"
           <p className="lede mt-5 text-pretty">
             We&rsquo;re built around the participant — not the system. From the
             first conversation to long-term supports, here&rsquo;s what sets
