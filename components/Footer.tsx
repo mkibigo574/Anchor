@@ -247,7 +247,17 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <p className="text-xs text-cream-400">
-            © {new Date().getFullYear()} {company.name}. All rights reserved.
+            © {new Date().getFullYear()} {company.name}. All rights reserved. {" "}
+            Developed by{" "}
+            <a
+              href="https://michaelkibigo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cream-200 hover:text-white underline underline-offset-2 transition"
+            >
+              Michael
+            </a>
+            .    
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-cream-400">
             <li>
