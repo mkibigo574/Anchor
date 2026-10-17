@@ -6,11 +6,9 @@ import { Target, Eye, Shield, MapPin } from "lucide-react";
 
 export const metadata = {
   title: "About Us",
-  // TODO: Restore "registered NDIS provider" wording once owner receives NDIS registration licence
-  // description:
-  //   "Anchor Nursing & Disability Support Services — registered NDIS provider in Darwin delivering person-centred, culturally safe disability supports across the Northern Territory."
+  
   description:
-    "Anchor Nursing & Disability Support Services — NDIS provider in Darwin delivering person-centred, culturally safe disability supports across the Northern Territory."
+    "Anchor Nursing & Disability Support Services — registered NDIS provider in Darwin delivering person-centred, culturally safe disability supports across the Northern Territory."
 };
 
 export default function AboutPage() {
@@ -61,8 +59,8 @@ export default function AboutPage() {
 
           <div className="col-span-12 lg:col-span-6 lg:col-start-7 space-y-5 text-ink-700 leading-relaxed text-pretty text-lg">
             <p>
-              Anchor Nursing &amp; Disability Support Services (Anchor NDSS) {/* THIS SECTION TO BE REINSTATED UPON OWNER RECEIVING NDIS REGISTRATION "is
-              an Australian NDIS provider " */ } delivers high-quality,
+              Anchor Nursing &amp; Disability Support Services (Anchor NDSS) is
+              an Australian NDIS provider that delivers high-quality,
               person-centred disability and community-based supports.
             </p>
             <p>
